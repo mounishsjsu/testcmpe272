@@ -1,22 +1,22 @@
 <?php
- /* Create simple Website with PHP - https://coursesweb.net/php-mysql/ */
+  /* Create simple Website with PHP - http://coursesweb.net/php-mysql/ */
 
 // create an array with data for title, and meta, for each page
 $pgdata = array();
 $pgdata['index'] = array(
- 'title'=>'Title for Home page',
- 'description'=>'Here add the description for Home page',
- 'keywords'=>'meta keywords, for, home page'
+  'title'=>'Title for Home page',
+  'description'=>'Here add the description for Home page',
+  'keywords'=>'meta keywords, for, home page'
 );
 $pgdata['about_me'] = array(
- 'title'=>'Title for About Me page',
- 'description'=>'Description for About Me, https://coursesweb.net',
- 'keywords'=>'about me, https://coursesweb.net'
+  'title'=>'Title for About Me page',
+  'description'=>'Description for About Me, http://coursesweb.net',
+  'keywords'=>'about me, coursesweb.net'
 );
 $pgdata['images'] = array(
- 'title'=>'Title for Images',
- 'description'=>'Here add the description for the page with images',
- 'keywords'=>'images, pictures, photo'
+  'title'=>'Title for Images',
+  'description'=>'Here add the description for the page with images',
+  'keywords'=>'images, pictures, photo'
 );
 
 // set the page name
@@ -40,42 +40,42 @@ header('Content-type: text/html; charset=utf-8');
  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
  <style><!--
  body {
- margin:0;
- text-align:center;
- padding:0 1em;
+  margin:0;
+  text-align:center;
+  padding:0 1em;
  }
  header, footer, section, aside, nav, article { display: block; }
  #posts{
- position:relative;
- width:99%;
- margin:0.5em auto;
- background:#fdfefe;
+  position:relative;
+  width:99%;
+  margin:0.5em auto;
+  background:#fdfefe;
  }
  #menu {
- float:left;
- width:15em;
- margin:0 auto;
- background:#f8f9fe;
- border:1px solid blue;
- text-align:left;
+  float:left;
+  width:15em;
+  margin:0 auto;
+  background:#f8f9fe;
+  border:1px solid blue;
+  text-align:left;
  }
  #menu li a:hover {
- text-decoration:none;
- color:#01da02;
+   text-decoration:none;
+   color:#01da02;
  }
  #article {
- margin:0 1em 0 16em;
- background:#efeffe;
- border:1px solid #01da02;
- padding:0.2em 0.4em;
+  margin:0 1em 0 16em;
+  background:#efeffe;
+  border:1px solid #01da02;
+  padding:0.2em 0.4em;
  }
  #footer {
- clear:both;
- position:relative;
- background:#edfeed;
- border:1px solid #dada01;
- width:99%;
- margin:2em auto 0.5em auto;
+  clear:both;
+  position:relative;
+  background:#edfeed;
+  border:1px solid #dada01;
+  width:99%;
+  margin:2em auto 0.5em auto;
  }
  --></style>
 </head>
@@ -87,17 +87,17 @@ header('Content-type: text/html; charset=utf-8');
 
 <section id="posts">
  <nav id="menu">
- <ul>
- <li><a href="index.php" title="Home page">Home</a></li>
- <li><a href="index.php?pg=about_me" title="About Me">About Me</a></li>
- <li><a href="index.php?pg=images" title="Images">Images</a></li>
- </ul>
+  <ul>
+   <li><a href="index.php" title="Home page">Home</a></li>
+   <li><a href="index.php?pg=about_me" title="About Me">About Me</a></li>
+   <li><a href="index.php?pg=images" title="Images">Images</a></li>
+  </ul>
  </nav>
  <article id="article"><?php echo file_get_contents('pages/'. $pgname. '.htm'); ?></article>
 </section>
 
 <footer id="footer">
- <p>From: <a href="https://coursesweb.net/php-mysql/" title="Free PHP-MySQL course">PHP-MySQL Course</a></p>
+ <p>From: <a href="http://coursesweb.net/php-mysql/" title="Free PHP-MySQL course">PHP-MySQL Course</a></p>
 </footer>
 
 </body>
