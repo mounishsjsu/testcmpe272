@@ -37,7 +37,8 @@ header('Content-type: text/html; charset=utf-8');
 </header>
 
 
-<div class="nav">
+<section>
+ <nav>
  <ul>
  <li><a href="index.php?" title="Home page">Home</a></li>
  <li><a href="index.php?pg=about" title="About">About</a></li>
@@ -45,9 +46,7 @@ header('Content-type: text/html; charset=utf-8');
  <li><a href="index.php?pg=blogs" title="Images">blogs</a></li>
  <li><a href="index.php?pg=contacts" title="Images">contacts</a></li>
  </ul>
-</div>
-<section id="posts">
- <article id="article"><?php echo file_get_contents('pages/'. $pagename. '.html'); ?></article>
+ <article id="article"><?php echo htmlentities(file_get_contents('pages/'. $pagename. '.html')); ?></article>
 </section>
 
 <footer id="footer">
