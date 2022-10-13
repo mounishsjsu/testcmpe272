@@ -37,6 +37,7 @@ body {font-family: "Lato", sans-serif}
     <a href="#Courses" class="w3-bar-item w3-button w3-padding-large">Courses</a>
     <a href="#News" class="w3-bar-item w3-button w3-padding-large">News</a>
     <a href="#Contact" class="w3-bar-item w3-button w3-padding-large">Contact</a>
+    <a href="/users.html" class="w3-bar-item w3-button w3-padding-large">UsersList</a>
   </div>
 </div>
 
