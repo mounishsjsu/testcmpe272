@@ -3,15 +3,16 @@ $authenticate = false;
 if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 {
  $name = $_SERVER['PHP_AUTH_USER'];
- $pass = $_SERVER['PHP_AUTH_PW'];
- if ($name == 'admin' && $pass == 'pass')
+ $plaintext_pass = $_SERVER['PHP_AUTH_PW'];
+
+ $hash_pass = password_hash($plaintext_pass, PASSWORD_DEFAULT);
+
+ $check = password_verify($plaintext_pass,$hash_pass)
+ 
+ if ($name == 'admin' && $check)
  {
   $authenticate = true;
-  echo "<table>";
-     echo "<tr>";
-     echo "<td>Name</td>";
-     echo "</tr>";
-     echo "</table>";
+  echo "Users List - Naruto, Sasuke, Itachi";
  }
 }
  
