@@ -4,10 +4,11 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 {
  $name = $_SERVER['PHP_AUTH_USER'];
  $plaintext_pass = $_SERVER['PHP_AUTH_PW'];
+ $pass = "Password";
 
  $hash_pass = password_hash($plaintext_pass, PASSWORD_DEFAULT);
 
- $check = password_verify($plaintext_pass,$hash_pass)
+ $check = password_verify($pass,$hash_pass);
  
  if ($name == 'admin' && $check)
  {
