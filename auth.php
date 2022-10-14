@@ -7,7 +7,11 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
  if ($name == 'admin' && $pass == 'pass')
  {
   $authenticate = true;
-  echo "Naruto";
+  echo "<table>";
+     echo "<tr>";
+     echo "<td>Name</td>";
+     echo "</tr>";
+     echo "</table>";
  }
 }
  
