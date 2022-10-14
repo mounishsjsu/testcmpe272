@@ -4,9 +4,10 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 {
  $name = $_SERVER['PHP_AUTH_USER'];
  $pass = $_SERVER['PHP_AUTH_PW'];
- if ($name == 'user' && $pass == 'pass')
+ if ($name == 'admin' && $pass == 'pass')
  {
   $authenticate = true;
+  echo "Naruto"
  }
 }
  
