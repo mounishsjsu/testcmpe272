@@ -2,7 +2,7 @@
 $authenticate = false;
 if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 {
-    $myfile = fopen("logindetails.txt", "r") or die("Unable to open file!");
+    $myfile = fopen("/logindetails.txt", "r") or die("Unable to open file!");
     //$string = fread($myfile, filesize("logindetails.txt"));
     while (!feof($myfile))
     {
