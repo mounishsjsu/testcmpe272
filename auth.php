@@ -2,12 +2,11 @@
 $authenticate = false;
 $myFile = "logindetails.txt";
 $string = file_get_contents($myFile);
+$username_password = explode(' ',$string);
 if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 {
  $name = $_SERVER['PHP_AUTH_USER'];
  $plaintext_pass = $_SERVER['PHP_AUTH_PW'];
-
- $username_password = explode(' ',$string);
 
  foreach($username_password as $u_p){
 
