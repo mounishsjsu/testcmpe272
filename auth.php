@@ -4,14 +4,14 @@ $myFile = "logindetails.txt";
 $string = file_get_contents($myFile);
 if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 {
+ $name = $_SERVER['PHP_AUTH_USER'];
+ $plaintext_pass = $_SERVER['PHP_AUTH_PW'];
+
  $username_password = explode(' ',$string);
 
  foreach($username_password as $u_p){
 
  list($username,$password) = explode(',',$u_p);  
- 
- $name = $_SERVER['PHP_AUTH_USER'];
- $plaintext_pass = $_SERVER['PHP_AUTH_PW'];
 
  if($username == $name && $password == $plaintext_pass)
  {
@@ -23,17 +23,13 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
  if ($check)
  {
   $authenticate = true;
- }
- }
- }
- if ($authenticate==true)
- {
- foreach($username_password as $u_p){
+  foreach($username_password as $u_p){
 
- list($username,$password) = explode(',',$u_p);
+  list($username,$password) = explode(',',$u_p);
   echo "$username <br/>";
+  }
  }
-}
+ }
 
 }
  
