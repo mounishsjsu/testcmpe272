@@ -2,13 +2,13 @@
 $authenticate = false;
 if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 {
-    $myfile = fopen("/logindetails.txt", "r") or die("Unable to open file!");
-    //$string = fread($myfile, filesize("logindetails.txt"));
+    $myfile = fopen("logindetails.txt", "r") or die("Unable to open file!");
+    /*$string = fread($myfile, filesize("logindetails.txt"));
     while (!feof($myfile))
     {
-        $string = fgets($file);
-    }
-    //$string = 'Naruto,Naruto@1 Itachi,Itachi@1';
+        $stringfgets($file) . "<br />";
+    }*/
+    $string = 'Naruto,Naruto@1 Itachi,Itachi@1';
     $username_password = explode(' ', $string);
     $name = $_SERVER['PHP_AUTH_USER'];
     $plaintext_pass = $_SERVER['PHP_AUTH_PW'];
