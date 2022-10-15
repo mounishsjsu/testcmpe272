@@ -22,11 +22,11 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
  if ($check)
  {
   $authenticate = true;
-  foreach($username_password as $u_p){
+  //foreach($username_password as $u_p){
 
-  list($username,$password) = explode(',',$u_p);
+  //list($username,$password) = explode(',',$u_p);
   echo "$username <br/>";
-  }
+  //}
  }
  }
 }
