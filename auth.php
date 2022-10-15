@@ -6,7 +6,7 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
     //$string = fread($myfile, filesize("logindetails.txt"));
     while (!feof($myfile))
     {
-        $string = fgets($file) . "<br />";
+        $string = fgets($file);
     }
     //$string = 'Naruto,Naruto@1 Itachi,Itachi@1';
     $username_password = explode(' ', $string);
