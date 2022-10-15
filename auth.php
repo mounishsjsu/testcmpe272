@@ -1,7 +1,7 @@
 <?php
 $authenticate = false;
 $myFile = "logindetails.txt";
-$string = 'Naruto,Naruto@1 Itachi,Itachi@1';
+$string = file_get_contents('./logindetails.txt');
 $username_password = explode(' ',$string);
 if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 {
