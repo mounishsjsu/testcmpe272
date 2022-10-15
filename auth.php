@@ -12,14 +12,14 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 
  list($username,$password) = explode(',',$u_p);  
 
- if($username == $name && $password == $plaintext_pass)
+ if ($username == $name && $password == $plaintext_pass)
  {
 
  $hash_pass = password_hash($plaintext_pass, PASSWORD_DEFAULT);
 
  $check = password_verify($password,$hash_pass);
  
- if($check)
+ if ($check)
  {
   $authenticate = true;
   }
@@ -39,5 +39,6 @@ foreach($username_password as $u_p){
 
   list($username,$password) = explode(',',$u_p);
   echo "$username <br/>";
+}
 }
 ?>
