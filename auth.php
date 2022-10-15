@@ -18,7 +18,7 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
 
  $hash_pass = password_hash($plaintext_pass, PASSWORD_DEFAULT);
 
- $check = password_verify($pass,$hash_pass);
+ $check = password_verify($password,$hash_pass);
  
  if ($check)
  {
@@ -27,7 +27,7 @@ if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW']))
  }
  }
  if ($authenticate==true)
-{
+ {
  foreach($username_password as $u_p){
 
  list($username,$password) = explode(',',$u_p);
