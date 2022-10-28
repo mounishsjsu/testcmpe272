@@ -38,7 +38,7 @@ body {font-family: "Lato", sans-serif}
     <a href="#News" class="w3-bar-item w3-button w3-padding-large">News</a>
     <a href="#Contact" class="w3-bar-item w3-button w3-padding-large">Contact</a>
     <a href="/auth.php" class="w3-bar-item w3-button w3-padding-large">UsersList</a>
-    <a href="/sqlconnect.php" class="w3-bar-item w3-button w3-padding-large">MySQLList</a>
+    <a href="/users.php" class="w3-bar-item w3-button w3-padding-large">MySQLList</a>
   </div>
 </div>
 
