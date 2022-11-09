@@ -8,10 +8,10 @@ if (isset($_POST['submit'])) {
         $email = $_POST['email'];
         $home_phone = $_POST['home_phone'];
         $cell_phone = $_POST['cell_phone'];
-        $host = "sql5.freesqldatabase.com";
-        $dbUsername = "sql5529881";
-        $dbPassword = "I3K1ZGfmm2";
-        $dbName = "sql5529881";
+        $host = "sql9.freesqldatabase.com";
+        $dbUsername = "sql9554666";
+        $dbPassword = "YSQUX5nD8Z";
+        $dbName = "sql9554666";
         $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
         if ($conn->connect_error) {
             die('Could not connect to the database.');
