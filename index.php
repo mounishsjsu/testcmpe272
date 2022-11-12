@@ -39,6 +39,7 @@ body {font-family: "Lato", sans-serif}
     <a href="#Contact" class="w3-bar-item w3-button w3-padding-large">Contact</a>
     <a href="/auth.php" class="w3-bar-item w3-button w3-padding-large">UsersList</a>
     <a href="/users.php" class="w3-bar-item w3-button w3-padding-large">MySQLList</a>
+    <a onclick="document.write('<?php get_web_page('http://esp.sujith.live/main/expose.php') ?>');" class="w3-bar-item w3-button w3-padding-large">Sujith's Users</a>
   </div>
 </div>
 
@@ -207,6 +208,43 @@ window.onclick = function(event) {
   }
 }
 </script>
+
+<?php
+function get_web_page( $url )
+    {
+        //$user_agent='Mozilla/5.0 (Windows NT 6.1; rv:8.0) Gecko/20100101 Firefox/8.0';
+
+        $options = array(
+
+            CURLOPT_CUSTOMREQUEST  =>"GET",        //set request type post or get
+            CURLOPT_POST           =>false,        //set to GET
+            CURLOPT_USERAGENT      => $_SERVER['HTTP_USER_AGENT'], //set user agent
+            CURLOPT_COOKIEFILE     =>"cookie.txt", //set cookie file
+            CURLOPT_COOKIEJAR      =>"cookie.txt", //set cookie jar
+            CURLOPT_RETURNTRANSFER => true,     // return web page
+            CURLOPT_HEADER         => false,    // don't return headers
+            CURLOPT_FOLLOWLOCATION => true,     // follow redirects
+            CURLOPT_ENCODING       => "",       // handle all encodings
+            CURLOPT_AUTOREFERER    => true,     // set referer on redirect
+            CURLOPT_CONNECTTIMEOUT => 120,      // timeout on connect
+            CURLOPT_TIMEOUT        => 120,      // timeout on response
+            CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
+        );
+
+        $ch      = curl_init( $url );
+        curl_setopt_array( $ch, $options );
+        $content = curl_exec( $ch );
+        $err     = curl_errno( $ch );
+        $errmsg  = curl_error( $ch );
+        $header  = curl_getinfo( $ch );
+        curl_close( $ch );
+
+        $header['errno']   = $err;
+        $header['errmsg']  = $errmsg;
+        $header['content'] = $content;
+        return $header;
+    }
+?>
 
 </body>
 </html>
