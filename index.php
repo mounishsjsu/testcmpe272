@@ -39,7 +39,7 @@ body {font-family: "Lato", sans-serif}
     <a href="#Contact" class="w3-bar-item w3-button w3-padding-large">Contact</a>
     <a href="/auth.php" class="w3-bar-item w3-button w3-padding-large">UsersList</a>
     <a href="/users.php" class="w3-bar-item w3-button w3-padding-large">MySQLList</a>
-    <a onclick="document.write('<?php get_web_page('http://esp.sujith.live/main/expose.php') ?>');" class="w3-bar-item w3-button w3-padding-large">Sujith's Users</a>
+    <a onclick="document.write('<?php get_web_page('http://esp.sujith.live/main/expose.php'); ?>');" class="w3-bar-item w3-button w3-padding-large">Sujith's Users</a>
   </div>
 </div>
 
