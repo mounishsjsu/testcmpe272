@@ -54,6 +54,30 @@ if (isset($_POST['submit'])) {
     }
 }
 else {
-    echo "Submit button is not set";
+    $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $email = $_POST['email'];
+        $home_phone = $_POST['home_phone'];
+        $cell_phone = $_POST['cell_phone'];
+        $host = "sql9.freesqldatabase.com";
+        $dbUsername = "sql9554666";
+        $dbPassword = "YSQUX5nD8Z";
+        $dbName = "sql9554666";
+        $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+        if ($conn->connect_error) {
+            die('Could not connect to the database.');
+        }
+        else {
+
+            $stmt = $conn->prepare("SELECT * FROM users");
+            $stmt->execute();
+            $arr = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            if(!$arr) exit('No rows');
+           foreach ($arr as $row) {
+            echo "first_name: " . $row["first_name"]. " , last_name: " . $row["last_name"]. " , email: " . $row["email"]. " , Home Address: " . $row["home_address"]. " , Home Phone: " . $row["home_phone"]. " , Cell Phone: " . $row["cell_phone"]. "<br>";
+           }
+            $stmt->close();
+            $conn->close();
+        }
 }
 ?>
